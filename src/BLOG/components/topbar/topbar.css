@@ -25,6 +25,11 @@
   cursor: pointer;
 }
 
+.link{
+  text-decoration: none;
+  color: black;
+}
+
 .topCenter {
   flex: 6;
 }
@@ -40,12 +45,16 @@
 .topListItem {
   margin-right: 20px;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 900;
   cursor: pointer;
 }
 
-.topListItem:hover{
+.topListItem .link:hover{
     color: gray;
+}
+
+.topListItem:hover {
+  color: gray;
 }
 
 .topImg {

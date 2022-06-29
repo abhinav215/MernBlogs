@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./login.css";
 
+const URL_BACKEND = "https://blog-site-restapi.herokuapp.com/"
+
 export default function Login() {
   const userRef = useRef();
   const passwordRef = useRef();
@@ -13,7 +15,7 @@ export default function Login() {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("api/auth/login", {
+      const res = await axios.post(URL_BACKEND +"api/auth/login", {
         username: userRef.current.value,
         password: passwordRef.current.value,
       });

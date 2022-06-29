@@ -3,6 +3,8 @@ import "./write.css";
 import axios from "axios"
 import { Context } from "../../context/Context";
 
+const URL_BACKEND = "https://blog-site-restapi.herokuapp.com/"
+
 export default function Write() {
   const [title,setTitle] = useState("")
   const [desc,setDesc] = useState("")
@@ -23,14 +25,14 @@ export default function Write() {
       data.append("file",file)
       newPost.photo = filename
       try {
-        await axios.post("/api/upload",data)
+        await axios.post(URL_BACKEND +"/api/upload",data)
       } catch (error) {
         console.log(error)
       }
     }
     try {
       console.log(newPost)
-      const res = await axios.post("/api/posts",newPost)
+      const res = await axios.post(URL_BACKEND +"/api/posts",newPost)
       window.location.replace("/post/"+res.data._id)
     } catch (error) {
       console.log(error)

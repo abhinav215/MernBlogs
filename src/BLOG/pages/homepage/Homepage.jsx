@@ -6,6 +6,7 @@ import "./homepage.css";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
+const URL_BACKEND = "https://blog-site-restapi.herokuapp.com/"
 
 export default function Homepage() {
   const {search} = useLocation();
@@ -15,12 +16,11 @@ export default function Homepage() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      console.log(search)
-      const res = await axios.get("api/posts"+search);
+      console.log(URL_BACKEND +"api/posts"+search)
+      const res = await axios.get(URL_BACKEND +"api/posts"+search);
       setPosts(res.data);
       console.log(res)
     };
-    console.log("fetch",posts)
     fetchPosts();
   }, [search]);
 

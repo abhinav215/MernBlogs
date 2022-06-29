@@ -4,9 +4,13 @@ import { useContext,useState } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios"
 
+
+const PF = "https://blog-site-restapi.herokuapp.com/images/"
+const URL_BACKEND = "https://blog-site-restapi.herokuapp.com/"
+
 export default function Settings() {
+  
   const {user,dispatch } = useContext(Context)
-  const PF = "http://localhost:5000/images/"
   
   const [file,setFile] = useState(null)
   const [username,setUsername] = useState("")
@@ -30,13 +34,13 @@ export default function Settings() {
       data.append("file",file)
       updatedUser.profilePic = filename
       try {
-        await axios.post("/api/upload",data)
+        await axios.post(URL_BACKEND + "/api/upload",data)
       } catch (error) {
         console.log(error)
       }
     }
     try {
-      const res = await axios.put("/api/users/"+user._id ,updatedUser)
+      const res = await axios.put(URL_BACKEND + "/api/users/"+user._id ,updatedUser)
       setSuccess(true)
       dispatch({type:"UPDATE_SUCCESS",payload: res.data})
     } catch (error) {

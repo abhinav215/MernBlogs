@@ -4,9 +4,10 @@ import { useContext } from "react";
 import { Context } from "../../context/Context";
 
 
+const PF = "https://blog-site-restapi.herokuapp.com/images/"
+
 
 export default function Topbar() {
-  const PF = "http://localhost:5000/images/"
   
   const {user,dispatch} = useContext(Context)
 

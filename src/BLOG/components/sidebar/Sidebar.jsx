@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import "./sidebar.css";
 import axios from "axios"
 
+
+const URL_BACKEND = "https://blog-site-restapi.herokuapp.com/"
+
 export default function Sidebar() {
   const [cats,setCat] = useState([])
 
   useEffect(()=>{
     const getCat = async()=>{
-      const res = await axios.get("api/categories");
+      const res = await axios.get(URL_BACKEND + "api/categories");
       setCat(res.data)
     };
     getCat()

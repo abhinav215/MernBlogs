@@ -6,6 +6,11 @@ import Post from "../post/Post";
 
 import { Context } from "../../context/Context";
 
+
+
+const URL_BACKEND = "https://blog-site-restapi.herokuapp.com/"
+const PF = "https://blog-site-restapi.herokuapp.com/images/"
+
 export default function SinglePost() {
   const location = useLocation()
   const path = (location.pathname.split("/")[2])
@@ -17,13 +22,14 @@ export default function SinglePost() {
   
   const {user} = useContext(Context)
 
-  const PF = "http://localhost:5000/images/"
+  // const PF = "http://localhost:5000/images/"
+  // const PF = "http://localhost:5000/images/"
 
   const [post,setPost] = useState({})
 
   const handleDelete=async ()=>{
     try {
-      await axios.delete(`/api/posts/${post._id}`,{data:{username:user.username}})
+      await axios.delete(URL_BACKEND +`/api/posts/${post._id}`,{data:{username:user.username}})
       window.location.replace("/")
     } catch (error) {
       
@@ -32,7 +38,7 @@ export default function SinglePost() {
 
   const handleUpdate= async()=>{
       try {
-        await axios.put(`/api/posts/${post._id}`,{
+        await axios.put(URL_BACKEND +`/api/posts/${post._id}`,{
           username:user.username, title,desc
         })
         setUpdateMode(false)
@@ -43,7 +49,7 @@ export default function SinglePost() {
 
   useEffect(()=>{
     const getPost = async()=>{
-      const res = await axios.get("/api/posts/"+path)
+      const res = await axios.get(URL_BACKEND +"/api/posts/"+path)
       setPost(res.data)
       setTitle(res.data.title)
       setDesc(res.data.desc)

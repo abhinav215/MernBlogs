@@ -3,6 +3,8 @@ import "./register.css"
 import axios from "axios"
 import { Link } from "react-router-dom"
 
+const URL_BACKEND = "https://blog-site-restapi.herokuapp.com/"
+
 export default function Register() {
   const [username,setUsername] = useState("")
   const [email,setEmail] = useState("")
@@ -16,7 +18,7 @@ export default function Register() {
     setError(false)
     console.log(username,email,password);
     try {
-      const res = await axios.post("api/auth/register",{username,email,password})
+      const res = await axios.post(URL_BACKEND + "api/auth/register",{username,email,password})
       console.log(res);
       res.data && window.location.replace("/login")
     } catch (error) {

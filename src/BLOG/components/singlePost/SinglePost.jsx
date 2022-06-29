@@ -2,7 +2,6 @@ import { useEffect, useState,useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./singlePost.css";
 import axios from "axios";
-import Post from "../post/Post";
 
 import { Context } from "../../context/Context";
 

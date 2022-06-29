@@ -16,7 +16,7 @@ const About = () => {
                             Hello There!
                         </p>
                         <h1>
-                            I'm Amr Arnous
+                            I'm Abhinav Bhatnagar
                         </h1>
                     </div>
                     <div class="about-content">

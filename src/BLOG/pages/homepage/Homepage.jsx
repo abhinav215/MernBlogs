@@ -16,10 +16,10 @@ export default function Homepage() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      console.log(URL_BACKEND +"api/posts"+search)
+      // console.log(URL_BACKEND +"api/posts"+search)
       const res = await axios.get(URL_BACKEND +"api/posts"+search);
       setPosts(res.data);
-      console.log(res)
+      // console.log(res)
     };
     fetchPosts();
   }, [search]);

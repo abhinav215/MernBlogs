@@ -13,14 +13,16 @@ import About from "./pages/About/About";
 
 function App() {
   const {user} = useContext(Context)
+  console.log(user,"user")
+  console.log(user ? "home":"rigi")
   return (
     <Router>
       <Topbar />
       <Routes>
-        <Route exact path="/" element={<Homepage />}/>
-        <Route path="/posts" element={<Homepage />}/>
-        <Route path="/register" element={user ? <Homepage /> : <Register />}/>
-        <Route path="/login" element={user ? <Homepage /> : <Login />}/>
+        <Route exact path="/" element={user ? <Homepage /> : <Login />}/>
+        <Route path="/posts" element={user ? <Homepage /> : <Login />}/>
+        <Route path="/register" element={user ? <Register />: <Login />}/>
+        <Route path="/login" element={user ? <Register /> :<Login />}/>
         <Route path="/post/:id"  element={<Single />}/>
         <Route path="/write"  element={user ? <Write /> : <Login />}/>
         <Route path="/contact"  element={user ? <Contact /> : <Login />}/>

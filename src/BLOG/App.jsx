@@ -13,8 +13,6 @@ import About from "./pages/About/About";
 
 function App() {
   const {user} = useContext(Context)
-  console.log(user,"user")
-  console.log(user ? "home":"rigi")
   return (
     <Router>
       <Topbar />

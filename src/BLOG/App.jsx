@@ -15,12 +15,12 @@ function App() {
   const {user} = useContext(Context)
   return (
     <Router>
-      <Topbar />
+      {user?<Topbar />:<></>}
       <Routes>
         <Route exact path="/" element={user ? <Homepage /> : <Login />}/>
         <Route path="/posts" element={user ? <Homepage /> : <Login />}/>
-        <Route path="/register" element={user ? <Register />: <Login />}/>
-        <Route path="/login" element={user ? <Register /> :<Login />}/>
+        <Route path="/register" element={user ? <Homepage />:<Register />}/>
+        <Route path="/login" element={user ? <Homepage /> :<Login />}/>
         <Route path="/post/:id"  element={<Single />}/>
         <Route path="/write"  element={user ? <Write /> : <Login />}/>
         <Route path="/contact"  element={user ? <Contact /> : <Login />}/>

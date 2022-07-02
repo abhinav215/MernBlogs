@@ -6,7 +6,7 @@ import Settings from "./pages/settings/Settings";
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useContext,useEffect } from "react";
+import { useContext } from "react";
 import { Context } from "./context/Context";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/About/About";
@@ -20,11 +20,11 @@ function App() {
 
   return (
     <Router>
-      {/* {user?<Topbar />:<></>} */}
-      <Topbar />
+      {user?<Topbar />:<></>}
+      {/* <Topbar /> */}
       <Routes>
-        <Route exact path="/" element={<Homepage/>} />
-        {/* <Route exact path="/" element={user ? <Homepage /> : <Login />}/> */}
+        {/* <Route exact path="/" element={<Homepage/>} /> */}
+        <Route exact path="/" element={user ? <Homepage /> : <Login />}/>
         <Route path="/posts" element={user ? <Homepage /> : <Login />}/>
         <Route path="/register" element={user ? <Homepage />:<Register />}/>
         <Route path="/login" element={user ? <Homepage /> :<Login />}/>

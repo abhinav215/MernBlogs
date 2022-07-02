@@ -2,10 +2,12 @@ import { useContext, useState } from "react";
 import "./write.css";
 import axios from "axios"
 import { Context } from "../../context/Context";
+import { useNavigate } from "react-router-dom";
 
 const URL_BACKEND = "https://blog-site-restapi.herokuapp.com/"
 
 export default function Write() {
+  let navigate = useNavigate();
   const [title,setTitle] = useState("")
   const [desc,setDesc] = useState("")
   const [file,setFile] = useState(null)
@@ -33,7 +35,9 @@ export default function Write() {
     try {
       console.log(newPost)
       const res = await axios.post(URL_BACKEND +"api/posts",newPost)
-      window.location.replace("/post/"+res.data._id)
+      const abc = res.data._id
+      // window.location.replace("/post/"+res.data._id)
+      navigate("../post/"+abc, { replace: true })
     } catch (error) {
       console.log(error)
     }

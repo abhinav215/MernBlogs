@@ -37,7 +37,7 @@ export default function SinglePost() {
 
   const handleUpdate= async()=>{
       try {
-        await axios.put(URL_BACKEND +`/api/posts/${post._id}`,{
+        await axios.put(URL_BACKEND +`api/posts/${post._id}`,{
           username:user.username, title,desc
         })
         setUpdateMode(false)
@@ -48,7 +48,7 @@ export default function SinglePost() {
 
   useEffect(()=>{
     const getPost = async()=>{
-      const res = await axios.get(URL_BACKEND +"/api/posts/"+path)
+      const res = await axios.get(URL_BACKEND +"api/posts/"+path)
       setPost(res.data)
       setTitle(res.data.title)
       setDesc(res.data.desc)

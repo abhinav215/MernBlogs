@@ -20,7 +20,7 @@ export default function Homepage() {
       const res = await axios.get(URL_BACKEND +"api/posts"+search);
       setPosts(res.data);
       // console.log(res)
-    };
+    }
     fetchPosts();
   }, [search]);
 

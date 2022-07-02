@@ -29,11 +29,11 @@ function App() {
 
   return (
     <Router>
-      {user?<Topbar />:<></>}
-      {/* <Topbar /> */}
+      {/* {user?<Topbar />:<></>} */}
+      <Topbar />
       <Routes>
-        {/* <Route exact path="/" element={<Homepage/>} /> */}
-        <Route exact path="/" element={user ? <Homepage /> : <Login />}/>
+        <Route exact path="/" element={<Homepage/>} />
+        {/* <Route exact path="/" element={user ? <Homepage /> : <Login />}/> */}
         <Route path="/posts" element={user ? <Homepage /> : <Login />}/>
         <Route path="/register" element={user ? <Homepage />:<Register />}/>
         <Route path="/login" element={user ? <Homepage /> :<Login />}/>

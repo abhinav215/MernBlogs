@@ -32,7 +32,7 @@ export default function Write() {
     }
     try {
       console.log(newPost)
-      const res = await axios.post(URL_BACKEND +"/api/posts",newPost)
+      const res = await axios.post(URL_BACKEND +"api/posts",newPost)
       window.location.replace("/post/"+res.data._id)
     } catch (error) {
       console.log(error)

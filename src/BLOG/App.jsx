@@ -10,22 +10,13 @@ import { useContext,useEffect } from "react";
 import { Context } from "./context/Context";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/About/About";
-import axios from "axios";
 
-// const URL_BACKEND = "https://blog-site-restapi.herokuapp.com/api/"
+
 
 function App() {
   const {user} = useContext(Context)
 
-  
-  // useEffect(() => {
-  //   const fetchPosts = async () => {
-  //     const res = await axios.get(URL_BACKEND);
-  //     console.log(res)
-  //   };
-  //   fetchPosts();
-  //   console.log("yo")
-  // }, []);
+
 
   return (
     <Router>

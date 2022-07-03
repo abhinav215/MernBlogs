@@ -21,7 +21,13 @@ const About = () => {
                     </div>
                     <div class="about-content">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt architecto ut accusamus maxime laborum vel et consectetur, eveniet nobis, iure aperiam. Fuga illo impedit hic possimus tempora asperiores. Dicta, esse!
+                            Welcome to Blog$ify, your number one place to express your knowladge and view. We're dedicated to giving you the very best of expirence, with a focus on comfortability and features.
+                            <br/>
+                            We hope you enjoy our services as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.
+                            <br/>
+                            Sincerely,
+                            <br/>
+                            Abhinav Bhatnagar (Founder of Blog$ify)
                         </p>
                         <button>Download Resume</button>
                     </div>

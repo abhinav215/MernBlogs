@@ -17,7 +17,7 @@ import Error from "./pages/Error/Error";
 
 function App() {
   const {user} = useContext(Context)
-
+  console.log(user)
 
 
   return (

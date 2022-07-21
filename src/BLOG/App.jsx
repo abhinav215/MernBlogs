@@ -10,6 +10,7 @@ import { useContext } from "react";
 import { Context } from "./context/Context";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/About/About";
+import Error from "./pages/Error/Error";
 
 
 

@@ -35,7 +35,8 @@ function App() {
         <Route path="/contact"  element={user ? <Contact /> : <Login />}/>
         <Route path="/about"  element={user ? <About /> : <Login />}/>
         <Route path="/settings" element={user ? <Settings /> : <Login />}/>
-        <Route path="/" element={<Error/>}/>
+        {/* <Route path="/" element={<Error/>}/> */}
+        <Route path="*" element={user ? <Error /> : <Error />}/>
       </Routes>
     </Router>
     // <>abc</>

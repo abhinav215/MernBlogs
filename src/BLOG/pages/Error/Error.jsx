@@ -6,7 +6,9 @@ const Error = () => {
   const {user} = useContext(Context)
   console.log(user)
   return (
-    <div>Error</div>
+    <div>
+      <h1>error</h1>
+    </div>
   )
 }
 

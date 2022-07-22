@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./sidebar.css";
 import axios from "axios"
+import me from "../../assets/DSC_0516.JPG"
 
 
 const URL_BACKEND = "https://blog-site-restapi.herokuapp.com/"
@@ -21,13 +22,9 @@ export default function Sidebar() {
     <div className="sidebar">
       <div className="sidebarItem">
         <span className="sidebarTitle">ABOUT ME</span>
-        <img
-          src="https://themegoods-cdn-pzbycso8wng.stackpathdns.com/grandblog/demo/wp-content/uploads/2015/11/aboutme.jpg"
-          alt=""
-        />
+        <img src={me} alt=""/>
         <p>
-          Laboris sunt aute cupidatat velit magna velit ullamco dolore mollit
-          amet ex esse.Sunt eu ut nostrud id quis proident.
+          Welcome to Blog$ify, your number one place to express your knowladge and view. We're dedicated to giving you the very best of expirence, with a focus on comfortability and features.
         </p>
       </div>
       <div className="sidebarItem">

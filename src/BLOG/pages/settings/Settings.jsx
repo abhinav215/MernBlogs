@@ -61,10 +61,16 @@ export default function Settings() {
         <form className="settingsForm" onSubmit={handleSubmit}>
           <label>Profile Picture</label>
           <div className="settingsPP">
-            <img
+            {/* <img
               src={file? URL.createObjectURL(file):PF+user.profilePic}
               alt=""
-            />
+            /> */}
+            
+  
+            {user.profilePic?
+              <img className="topImg" src={file? URL.createObjectURL(file):PF+user.profilePic} alt="avaitar"/>:
+              <img className="topImg" src="https://media.istockphoto.com/photos/businessman-silhouette-as-avatar-or-default-profile-picture-picture-id476085198?k=20&m=476085198&s=612x612&w=0&h=8J3VgOZab_OiYoIuZfiMIvucFYB8vWYlKnSjKuKeYQM=" alt="avaitar"/>
+            }
             <label htmlFor="fileInput">
               <i className="settingsPPIcon far fa-user-circle"></i>{" "}
             </label>
@@ -77,11 +83,11 @@ export default function Settings() {
             />
           </div>
           <label>Username</label>
-          <input type="text" placeholder={user.username} onChange={e=>setUsername(e.target.value)}/>
+          <input required type="text" placeholder={user.username} onChange={e=>setUsername(e.target.value)}/>
           <label>Email</label>
-          <input type="email" placeholder={user.email} name="email" onChange={e=>setEmail(e.target.value)}/>
+          <input required type="email" placeholder={user.email} name="email" onChange={e=>setEmail(e.target.value)}/>
           <label>Password</label>
-          <input type="password" placeholder="Password" name="password" onChange={e=>setPassword(e.target.value)}/>
+          <input required type="password" placeholder="Password" name="password" onChange={e=>setPassword(e.target.value)}/>
           <button className="settingsSubmitButton" type="submit">
             Update
           </button>

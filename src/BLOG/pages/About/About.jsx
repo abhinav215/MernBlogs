@@ -1,5 +1,7 @@
 import React from 'react'
 import "./about.css"
+import me from "../../assets/DSC_0516.JPG"
+import resume from "../../assets/AbhinavBhatnagar.pdf"
 
 const About = () => {
   return (
@@ -8,7 +10,7 @@ const About = () => {
             <div class="circles"></div>
             <div class="details-container">
                 <div class="avatar">
-                    <img src="https://i.suar.me/l3zYA/l" class="img-fluid" alt=""/>
+                    <img src={me} class="img-fluid" alt=""/>
                 </div>
                 <div class="about">
                     <div class="name">
@@ -29,7 +31,7 @@ const About = () => {
                             <br/>
                             Abhinav Bhatnagar (Founder of Blog$ify)
                         </p>
-                        <button>Download Resume</button>
+                        <button><a href={resume} download>Download Resume</a></button>
                     </div>
                 </div>
                 <div class="clear"></div>

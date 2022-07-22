@@ -31,7 +31,7 @@ function App() {
         <Route path="/register" element={user ? <Homepage />:<Register />}/>
         <Route path="/login" element={user ? <Homepage /> :<Login />}/>
         <Route path="/post/:id"  element={<Single />}/>
-        <Route path="/write"  element={user ? <Write /> : <Login />}/>
+        <Route exact path="/write"  element={user ? <Write /> : <Login />}/>
         <Route path="/contact"  element={user ? <Contact /> : <Login />}/>
         <Route path="/about"  element={user ? <About /> : <Login />}/>
         <Route path="/settings" element={user ? <Settings /> : <Login />}/>

@@ -10,7 +10,6 @@ const PF = "https://blog-site-restapi.herokuapp.com/images/"
 export default function Topbar() {
   
   const {user,dispatch} = useContext(Context)
-
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   };
@@ -52,11 +51,11 @@ export default function Topbar() {
       <div className="topRight">
         {user ? (
           <Link className="link" to="/settings">
-            <img
-              className="topImg"
-              src={PF + user.profilePic}
-              alt=""
-            />
+            {user.profilePic?
+            <img className="topImg" src={PF + user.profilePic} alt=""/>:
+            <img className="topImg" src="https://media.istockphoto.com/photos/businessman-silhouette-as-avatar-or-default-profile-picture-picture-id476085198?k=20&m=476085198&s=612x612&w=0&h=8J3VgOZab_OiYoIuZfiMIvucFYB8vWYlKnSjKuKeYQM=" alt="avaitar"/>
+            }
+            
           </Link>
         ) : (
           <ul className="topList">
